@@ -1,0 +1,122 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #212121;
+    font-family: 'Inconsolata', monospace;
+}
+
+.header {
+    background-color: #333131;
+    color: #fff;
+    padding: 2px;
+    text-align: center;
+}
+
+.chat-container {
+    max-width: 800px;
+    margin: 20px auto;
+    height: 75vh;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.messages {
+    height: 65vh;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.message {
+    margin-bottom: 10px;
+}
+
+.message p {
+    margin: 5px 0;
+    padding: 5px 10px;
+    background-color: #3d3b3b;
+    border-radius: 5px;
+    word-wrap: break-word;
+    display: inline-block;
+    max-width: 80%;
+}
+
+.input-box {
+    display: flex;
+}
+
+.input-box input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    font-size: 16px;
+    background-color: #333131;
+    color: white;
+}
+
+.input-box button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.user-message {
+    text-align: right;
+    color: #d9d8d8;
+}
+
+.bot-message {
+    text-align: left;
+    color: lightgreen;
+}
+
+@keyframes typing {
+    0% { content: '.'; }
+    10% { content: '..'; }
+    20% { content: '...'; }
+    30% { content: '.'; }
+    40% { content: '..'; }
+    50% { content: '...'; }
+    60% { content: '.'; }
+    70% { content: '..'; }
+    80% { content: '...'; }
+    90% { content: '.'; }
+    100% { content: '...'; }
+}
+
+.typing-animation::after {
+    content: '...';
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    color: green;
+    width: 5rem;
+    font-weight: bold;
+    animation: typing 1s steps(3, end) infinite;
+}
+
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: rgb(3, 90, 3);
+    border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
